@@ -40,15 +40,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_205903) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.string "comment"
+    t.text "comment"
     t.integer "rating"
-    t.bigint "lists_id", null: false
+    t.bigint "list_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lists_id"], name: "index_reviews_on_lists_id"
+    t.index ["list_id"], name: "index_reviews_on_list_id"
   end
 
   add_foreign_key "bookmarks", "lists"
   add_foreign_key "bookmarks", "movies"
-  add_foreign_key "reviews", "lists", column: "lists_id"
+  add_foreign_key "reviews", "lists"
 end
