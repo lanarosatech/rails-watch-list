@@ -1,0 +1,8 @@
+<%= form_with model: @bookmark do |f| %>
+  <div class="form-group">
+    <%= f.label :comment %>
+    <%= f.text_area :comment, class: 'form-control' %>
+  </div>
+
+  <%= f.submit class: 'btn btn-primary mt-3' %>
+<% end %>

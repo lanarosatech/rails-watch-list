@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1><%= @list.title %></h1>
+    <%= link_to edit_list_path(@list.id), class: 'btn btn-light btn-sm border' do %>
+      <i class="fa fa-pencil"></i> Edit this list
+    <% end %>
+  </div>
+
+
+  <p class="well"><%= @list.details %></p>
+
+  <% if @list.completed %>
+    <i class="fa fa-check-square-o"></i> This list is completed
+  <% else %>
+    <i class="fa fa-square-o"></i> This list is not completed yet
+  <% end %>
+
+  <hr>
+  <%= link_to lists_path do %>
+    <i class="fa-solid fa-arrow-rotate-left"></i> Back to list
+  <% end %>
+</div>
